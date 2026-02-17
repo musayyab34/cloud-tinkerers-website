@@ -1,14 +1,102 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  --purple: #14162f;  /* your brand purple */
+  --bg: #0b0f19;
+}
+
 body {
-  font-family: system-ui, Arial, sans-serif;
-  background: #0b0f19;
+  font-family: "Inter", system-ui, Arial, sans-serif;
+  background: var(--bg);
   color: white;
 }
 
+/* =========================
+   NAVBAR (fully transparent)
+   ========================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+
+  padding: 14px 22px;
+
+  /* fully transparent */
+  background: transparent;
+  border-bottom: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.nav-inner {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+/* Logo image: no box, no border, no cropping */
+.logo-img {
+  height: 34px;      /* tweak to your taste */
+  width: auto;       /* keeps original aspect ratio */
+  display: block;
+
+  border: none;
+  background: transparent;
+  border-radius: 0;  /* remove rounding */
+  object-fit: contain;
+}
+
+/* Brand text purple */
+.brand-text {
+  font-size: 16px;
+  color: var(--purple);
+  opacity: 1;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* spacing between buttons */
+}
+
+.nav-link {
+  color: var(--purple);
+  text-decoration: none;
+  font-weight: 600;
+
+  padding: 10px 14px;
+  border-radius: 999px;
+
+  transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.nav-link:hover {
+  background: var(--purple);
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   HERO + VIDEO
+   ========================= */
 .hero {
   position: relative;
-  height: 100vh;          /* pinned section height */
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -17,7 +105,7 @@ body {
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;      /* makes it behave like a background image */
+  object-fit: cover;
   transform: translateZ(0);
 }
 
@@ -28,10 +116,15 @@ body {
   display: grid;
   place-content: center;
   text-align: center;
+
   padding: 2rem;
+  padding-top: 90px; /* keeps text away from navbar */
   background: transparent;
 }
 
+/* =========================
+   CONTENT
+   ========================= */
 .content {
   padding: 4rem 1.5rem;
   max-width: 900px;
