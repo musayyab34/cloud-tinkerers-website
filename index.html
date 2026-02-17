@@ -4,58 +4,56 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cloud Tinkerers</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
+  <header class="navbar">
+    <div class="nav-inner">
+      <a class="brand" href="#hero" aria-label="Cloud Tinkerers Home">
+        <img class="logo-img" src="assets/logo.png" alt="Cloud Tinkerers" />
+        <span class="brand-text">Cloud Tinkerers</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a class="nav-link" href="#hero">Home</a>
+        <a class="nav-link" href="#articles">Articles</a>
+        <a class="nav-link" href="#categories">Categories</a>
+        <a class="nav-link" href="#about">About</a>
+      </nav>
+    </div>
+  </header>
 
   <section class="hero" id="hero">
-    <video
-      id="bgVideo"
-      class="bg-video"
-      preload="auto"
-      muted
-      playsinline
-    >
+    <video id="bgVideo" class="bg-video" preload="auto" muted playsinline>
       <source src="assets/hero_scrub.mp4?v=2" type="video/mp4" />
     </video>
 
-    <!-- overlay content for later (navbar, buttons, etc.) -->
     <div class="hero-overlay">
       <h1>Cloud Tinkerers</h1>
       <p>Scroll to scrub the hero video.</p>
     </div>
   </section>
 
-  <!-- Dummy content so you can scroll past the hero -->
-  <section class="content">
+  <section class="content" id="articles">
     <h2>Next Section</h2>
     <p>Add your content here later.</p>
-    <div style="height: 150vh"></div>
+    <div style="height: 70vh"></div>
+
+    <h2 id="categories">Categories</h2>
+    <div style="height: 70vh"></div>
+
+    <h2 id="about">About</h2>
+    <div style="height: 70vh"></div>
   </section>
 
-  <!-- GSAP + ScrollTrigger (CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-
   <script src="script.js"></script>
 </body>
-<header class="navbar">
-  <div class="nav-inner">
-    <a class="brand" href="#hero" aria-label="Cloud Tinkerers Home">
-      <!-- Replace with your logo file later -->
-      <img class="logo-img" src="assets/logo.png" alt="Cloud Tinkerers" />
-      <span class="brand-text">Cloud Tinkerers</span>
-    </a>
-
-    <nav class="nav-links" aria-label="Primary">
-      <a class="nav-link" href="#hero">Home</a>
-      <a class="nav-link" href="#articles">Articles</a>
-      <a class="nav-link" href="#categories">Categories</a>
-      <a class="nav-link" href="#about">About</a>
-    </nav>
-  </div>
-</header>
 </html>
