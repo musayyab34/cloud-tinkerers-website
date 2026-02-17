@@ -10,7 +10,7 @@ let primed = false;
 (function rafLoop() {
   if (primed && video.duration) {
     const cur = video.currentTime || 0;
-    const next = cur + (targetTime - cur) * 0.18;
+    const next = cur + (targetTime - cur) * 0.10;
     if (Math.abs(next - cur) > 0.001) video.currentTime = next;
   }
   requestAnimationFrame(rafLoop);
@@ -57,7 +57,7 @@ function setupScroll() {
     start: "top top",
     end: () => "+=" + scrollDistance(),
     pin: true,
-    scrub: 0.4,
+    scrub: 1.0,
     anticipatePin: 1,
     invalidateOnRefresh: true,
     onUpdate: (self) => {
