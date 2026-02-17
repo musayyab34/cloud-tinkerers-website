@@ -23,7 +23,6 @@ body {
 
   padding: 14px 22px;
 
-  /* fully transparent */
   background: transparent;
   border-bottom: none;
   backdrop-filter: none;
@@ -51,13 +50,13 @@ body {
 
 /* Logo image: no box, no border, no cropping */
 .logo-img {
-  height: 34px;      /* tweak to your taste */
-  width: auto;       /* keeps original aspect ratio */
+  height: 34px;
+  width: auto;
   display: block;
 
   border: none;
   background: transparent;
-  border-radius: 0;  /* remove rounding */
+  border-radius: 0;
   object-fit: contain;
 }
 
@@ -71,7 +70,7 @@ body {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 16px; /* spacing between buttons */
+  gap: 16px;
 }
 
 .nav-link {
@@ -118,8 +117,27 @@ body {
   text-align: center;
 
   padding: 2rem;
-  padding-top: 90px; /* keeps text away from navbar */
+  padding-top: 90px;
   background: transparent;
+}
+
+/* Make the hero text purple */
+.hero-overlay h1,
+.hero-overlay p {
+  color: var(--purple);
+}
+
+.hero-overlay h1 {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 10px;
+}
+
+.hero-overlay p {
+  font-size: 16px;
+  font-weight: 600;
+  opacity: 0.92;
 }
 
 /* =========================
